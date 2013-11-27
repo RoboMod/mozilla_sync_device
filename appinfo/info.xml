@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<info>
+	<id>mozilla_sync_device</id>
+	<name>Mozilla Sync Device</name>
+	<description>Gives ownCloud the ability to act like a Mozilla Sync device 
+		to sync the bookmarks.</description>
+	<version>0.1</version>
+	<licence>GPLv3</licence>
+	<author>Andreas Ihrig (alias RoboMod)</author>
+	<require>4.93</require>
+</info>

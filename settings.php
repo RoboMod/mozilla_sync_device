@@ -1,10 +1,17 @@
 <?php
+
+/**
+ * ownCloud
+ *
+ * @author Andreas Ihrig (alias RoboMod)
+ * @copyright 2013 Andreas Ihrig (alias RoboMod) mod.andy@gmx.de
+ *
+ */
+
 $tmpl = null;
 
-$sync_exists = \OCP\User::getUser();
-
-// No email address set
-if (is_null($sync_exists)) {
+// Check if user has an active sync account
+if (!\OCA\mozilla_sync\User::hasSyncAccount()) {
     $tmpl = new \OCP\Template('mozilla_sync_device', 'nosync');
 } else {
     // Load JavaScript file

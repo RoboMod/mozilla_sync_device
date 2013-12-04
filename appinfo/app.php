@@ -16,13 +16,13 @@ if(\OCP\App::isEnabled('mozilla_sync')) {
 	\OCP\App::registerPersonal('mozilla_sync_device', 'settings');
 	
 	// Create and register sceduled sync job
-	$job = new SyncJob();
-	OCP\BackgroundJob::registerJob($job):
+	$job = new OCA\mozilla_sync_device\SyncJob();
+	\OCP\BackgroundJob::addRegularTask('\OCA\mozilla_sync_device\SyncJob', 'run');
 	
 } else {
 	// Load translations
 	$l = OC_L10N::get('core');
 	
 	$msg = $l->t('Can not enable the News app because the App Framework App is disabled');
-	\OCP\Util::writeLog('news', $msg, \OCP\Util::ERROR);
+	\OCP\Util::writeLog('mozilla_sync_device', $msg, \OCP\Util::ERROR);
 }
